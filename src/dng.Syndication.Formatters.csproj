@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net452;netstandard2.0</TargetFrameworks>
+    <AssemblyName>dng.Syndication.Formatters</AssemblyName>
+    <Version>1.4.2</Version>
+    <Authors>Daniel Mueller, William Cossey</Authors>
+    <Company />
+    <PackageTags>RSS Atom Feed Syndication Formatters</PackageTags>
+    <Copyright>2018</Copyright>
+    <PackageLicenseUrl>https://github.com/dotnetgeek/dng.Syndication/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl></PackageProjectUrl>
+    <Description>RSS 2.0 and Atom feed formatters (for .NET Full Framework und .NET CORE).</Description>
+    <RepositoryUrl>https://github.com/wdcossey/dng.Syndication.Formatters</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\dng.Syndication\src\dng.Syndication.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Abstractions" Condition="'$(TargetFramework)' == 'netstandard2.0'">
+      <HintPath>..\..\..\..\.nuget\packages\microsoft.aspnetcore.mvc.abstractions\2.0.2\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Abstractions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net452' ">
+    <PackageReference Include="Microsoft.AspNet.WebApi" Version="5.2.4" />
+    <Reference Include="System" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+
+</Project>
